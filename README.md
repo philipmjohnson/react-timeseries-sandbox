@@ -1,2 +1,3 @@
-# react-timeseries-sandbox
-Sample code for exploring react-timeseries-charts
+
+
+For details, please see http://ics-software-engineering.github.io/meteor-application-template-react/
