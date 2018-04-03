@@ -1,0 +1,30 @@
+{
+  "name": "React Time Series Sandbox",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "moment": "^2.20.1",
+    "pondjs": "^0.8.8",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "react-scripts": "1.1.1",
+    "react-timeseries-charts": "^0.14.0",
+    "semantic-ui-css": "^2.3.1",
+    "semantic-ui-react": "^0.78.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-meteor": "^4.2.1",
+    "eslint-plugin-react": "^7.6.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
