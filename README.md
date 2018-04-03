@@ -1,3 +1,16 @@
+# React TimeSeries Sandbox
 
+A repo to simplify the exploration of [React Timeseries Charts](http://software.es.net/react-timeseries-charts/#/).
 
-For details, please see http://ics-software-engineering.github.io/meteor-application-template-react/
+After downloading this repo:
+
+```
+cd app
+npm install
+```
+
+Then, to run the app, 
+
+```
+npm start
+```
