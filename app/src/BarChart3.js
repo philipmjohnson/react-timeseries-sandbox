@@ -35,12 +35,12 @@ class BarChart3 extends React.Component {
 
     const rawSeries = new TimeSeries({
       name: 'hilo rainfall points',
-      columns: ['time', 'precip'],
+      columns: ['time', 'value'],
       points: data,
     });
 
-    const series = rawSeries.fixedWindowRollup({ windowSize: '1h', aggregation: { precip: { precip: sum() } } });
-    const style = styler([{ key: 'precip', color: 'skyblue', selected: 'brown' }]);
+    const series = rawSeries.fixedWindowRollup({ windowSize: '1h', aggregation: { value: { value: sum() } } });
+    const style = styler([{ key: 'value', color: 'skyblue', selected: 'brown' }]);
 
     return (
         <WidgetPanel title='BarChart 3'>
@@ -51,7 +51,7 @@ class BarChart3 extends React.Component {
                     id='rain'
                     label='Rainfall (inches/hr)'
                     min={0}
-                    max={series.max('precip')}
+                    max={series.max('value')}
                     format='.2f'
                     width='70'
                     type='linear'
@@ -61,7 +61,7 @@ class BarChart3 extends React.Component {
                       axis='rain'
                       style={style}
                       spacing={1}
-                      columns={['precip']}
+                      columns={['value']}
                       series={series}
                       minBarHeight={1}
                   />
