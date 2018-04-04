@@ -7,10 +7,26 @@ import WidgetPanel from './WidgetPanel';
 
 class BarChart3 extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = { timerange: null };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   // this.makeHandleTrackerChanged = this.makeHandleTrackerChanged.bind(this);
+  //   // this.state = { timerange: null, tracker: null, trackerValue: 'xx', trackerEvent: null, series: null };
+  // }
+
+  // makeHandleTrackerChanged(series) {
+  //   const self = this;
+  //   return function (t) {
+  //     if (t) {
+  //       const e = series.atTime(t);
+  //       const eventTime = new Date(e.begin().getTime() + (e.end().getTime() - e.begin().getTime()) / 2);
+  //       const eventValue = e.get('rain');
+  //       const v = `rain: ${eventValue}`;
+  //       self.setState({ tracker: eventTime, trackerValue: v, trackerEvent: e });
+  //     } else {
+  //       self.setState({ tracker: null, trackerValue: null, trackerEvent: null });
+  //     }
+  //   }
+  // }
 
   render() { // eslint-disable-line class-methods-use-this
     const rainData = [
@@ -48,9 +64,10 @@ class BarChart3 extends React.Component {
         <WidgetPanel title='Rain and Wind'>
           <Resizable>
             <ChartContainer
-                enablePanZoom={true}
-                timeRange={ this.state.timerange || series.range() }
-                onTimeRangeChanged={timerange => this.setState({ timerange })}
+                // enablePanZoom={true}
+                timeRange={ series.range() }
+                // onTimeRangeChanged={timerange => this.setState({ timerange })}
+                // onTrackerChanged={this.makeHandleTrackerChanged(series)}
             >
               <ChartRow height='150'>
                 <YAxis
@@ -71,6 +88,17 @@ class BarChart3 extends React.Component {
                       series={series}
                       minBarHeight={1}
                   />
+                  {/*<EventMarker*/}
+                      {/*type='flag'*/}
+                      {/*axis='axis'*/}
+                      {/*event={this.state.trackerEvent}*/}
+                      {/*column='rain'*/}
+                      {/*info={[{ label: 'Anomaly', value: this.state.trackerValue }]}*/}
+                      {/*infoTimeFormat='%Y'*/}
+                      {/*infoWidth={120}*/}
+                      {/*markerRadius={2}*/}
+                      {/*markerStyle={{ fill: 'black' }}*/}
+                  {/*/>*/}
                 </Charts>
               </ChartRow>
             </ChartContainer>
